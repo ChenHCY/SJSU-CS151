@@ -1,0 +1,27 @@
+Exercise2 Question: List the main differences between primitive data type int and class Integer. Be as specific as possible. What are the advantages
+of using each one? List all specific functionalities that are available when using one and not the other. 
+
+Answer:
+
+1. The “int” is a primitive data type that is part of the language definition and is passed by value when used as a parameter to a method.
+
+For example: In Java, int is a primitive data type in Java Programming language. Using int data type we can create integer variables 
+containing int values. 
+             
+             int i= 10; //i is an int variable containing primitive nt value 10
+
+
+2. The "Integer" is a class that has a variety of static “helper” methods for doing things to integers, but it also allows you to create 
+objects from its class that contains a single int as the sole field within the object. 
+
+For example: Integer is a wrapper class used to create an object version of a primitive int value. 
+
+            Integer i = new Integer(10); //i is an object of Integer Wrapper class and it contains a primitive int value 10
+
+The specific available functionalities (From the internet website):
+
+1. Type: int is primitive and Integer is object(wrapper class of int).
+2. Instantiate: int only by value, but Integer by both value & constructor.
+3. Method call: int pass by value, but Integer pass by reference.
+4. Conversion: int by type casting, but Integer has its own set of methods(Integer.parseInt of valueOf).
+5. Usability: int can’t be used in List or Maps, but Integer can.
