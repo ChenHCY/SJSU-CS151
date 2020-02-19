@@ -13,7 +13,7 @@ public class Cat extends Domesticated
 		super(name, age, species);
 	}
 
-	public void Scratch()
+	public void scratch()
 	{
 		System.out.print("They can scratch others\n");
 	}
