@@ -33,6 +33,7 @@ public class AnimalTest
 	    A1.sleep();
 	    A1.eat();
 	    A1.greetHuman();
+	    A1.sound();
 	    System.out.print("\n");
 	    
 	    A2.setGender("Fmale");
@@ -44,6 +45,7 @@ public class AnimalTest
 	    A2.swim();
 	    A2.sleep();
 	    A2.eat();
+	    A2.sound();
 	    A2.greetHuman();
 	    System.out.print("\n");
 	    
