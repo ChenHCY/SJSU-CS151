@@ -18,6 +18,12 @@ public class Cat extends Domesticated
 		System.out.print("They can scratch others\n");
 	}
 	
+	@Override
+	public void sound() 
+	{
+	        System.out.print("The sounds was MOW/n");
+	}
+	
 	 @Override
 	 public String toString()
 	 {
