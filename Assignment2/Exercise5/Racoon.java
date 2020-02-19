@@ -19,7 +19,7 @@ public class Racoon extends Domesticated
 		System.out.print("The sounds was MOW/n");
 	}
 
-	public void Scratch()
+	public void scratch()
 	{
 		System.out.print("They can scratch others\n");
 	}
