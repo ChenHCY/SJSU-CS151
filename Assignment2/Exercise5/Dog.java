@@ -16,7 +16,13 @@ public class Dog extends Domesticated
 	
 	public void brak()
 	{
-		System.out.print("Their bark is WANG\n");
+		System.out.print("They sometimes like brak.\n");
+	}
+	
+	@Override
+	public void sound() 
+	{
+		System.out.print("The sounds was WANG./n");
 	}
 	
 	 @Override
