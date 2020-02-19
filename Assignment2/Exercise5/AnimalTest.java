@@ -41,7 +41,7 @@ public class AnimalTest
 	    A2.setSpeed("8m/s");
 	    A2.setType("Mammals");
 	    System.out.print("2. " + A2.toString());
-	    A2.Scratch();
+	    A2.scratch();
 	    A2.swim();
 	    A2.sleep();
 	    A2.eat();
@@ -54,7 +54,7 @@ public class AnimalTest
 	    A3.setSpeed("13m/s");
 	    A3.setType("Mammals");
 	    System.out.print("3. " + A3.toString());
-	    A3.Scratch();
+	    A3.scratch();
 	    A3.sleep();
 	    A3.eat();
 	    A3.sound();
