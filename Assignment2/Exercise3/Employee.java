@@ -87,7 +87,7 @@ public class Employee extends Person
 
 		if(this.employeeStatus == "a part-time employee" || this.employeeStatus == "a contracor employee")
 		{
-			totalPay = personalPay * workTime * 4;
+			totalPay = personalPay * workTime;
 			pay = getPersonalPay() + "/hr,";
 			time = getWorkTime() + " Hours";
 		}
@@ -97,6 +97,6 @@ public class Employee extends Person
 	public String toString()
 	{
 		return String.format(super.toString() + " Employee ID: " + getEmployeeId() +" Person is " + this.getEmployeeStatus() + ", \n")
-	                 + String.format("the pay is $" + this.pay + " should get paid or working " + this.time + ", And can recived " + getTotalPay() + " for one month\n");	
+	                 + String.format("the pay is $" + this.pay + " should get paid or working " + this.time + ", And can recived " + getTotalPay() + ".\n");	
 	}
 }
