@@ -42,16 +42,22 @@ public class Employee
     }
     
     
-    public double computepay(int unitsWorked) throws NumberFormatException, TooManyHoursWorkedException
+    public double computepay(int unitsWorked)
     {
-    	if (unitsWorked < 0)
-    	{
-    		throw new NumberFormatException("NumberFormatException occured.");
-    	} else if (unitsWorked > 40){
-    		throw new TooManyHoursWorkedException("TooManyHoursWorkedException occured.\n The workTime was over 40 hours.");
-    	} else {
-    		totalPay = hourlyPay * unitsWorked;  // hourly pay times number of hours worked
-    	}	
+	try{
+		if (unitsWorked < 0)
+		{
+			throw new NumberFormatException("NumberFormatException occured.");
+		} else if (unitsWorked > 40){
+			throw new TooManyHoursWorkedException("TooManyHoursWorkedException occured.\n The workTime was over 40 hours.");
+		} else {
+			totalPay = hourlyPay * unitsWorked;  // hourly pay times number of hours worked
+		}
+	}catch(NumberFormatException e){
+		System.out.println("Negative number of hours specified");
+	}catch(TooManyHoursWorkedException e){
+		System.out.println("More than 40 hours specified");
+	}
     	return totalPay;
     }
     
