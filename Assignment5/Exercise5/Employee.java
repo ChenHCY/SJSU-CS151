@@ -42,7 +42,7 @@ public class Employee
     }
     
     
-    public double computepay(int unitsWorked) throws TooManyHoursWorkedException
+    public double computepay(int unitsWorked) throws NumberFormatException, TooManyHoursWorkedException
     {
     	if (unitsWorked < 0)
     	{
