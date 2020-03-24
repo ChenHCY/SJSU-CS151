@@ -8,7 +8,7 @@ package Exercise5;
 
 public class EmployeeTest 
 {
-	public static void main(String[] args) throws TooManyHoursWorkedException 
+	public static void main(String[] args) 
 	{
 		Employee e1 = new Employee("Joe", "Smith", 101, 35);
 		
