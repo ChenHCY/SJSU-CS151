@@ -24,8 +24,11 @@ public class ReadFileInput
 			myFileReader = new FileReader(myFile);
 			BufferedReader reader = new BufferedReader(myFileReader);
 			
-			input = reader.readLine();
-			System.out.print(input);
+			System.out.print("The Sentence from the txt file was:\n");
+			 while ((input = reader.readLine()) != null) 
+			 {
+				 System.out.println(input);
+			 }
 			
 		}catch (IOException e){
 			e.printStackTrace();
