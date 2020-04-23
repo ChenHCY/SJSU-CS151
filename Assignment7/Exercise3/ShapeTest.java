@@ -18,12 +18,6 @@ public class ShapeTest extends Shape
 		shapeList.add(new Triangle(4.5,4));
 		shapeList.add(new Triangle(3,5.5));
 		
-		FileOutputStream fs = new FileOutputStream("obj1.ser");  
-		ObjectOutputStream os = new ObjectOutputStream(fs);  
-		os.writeObject(shapeList.indexOf(1)); 
-		fs.close();
-		os.close();
-		
 		//2. Circle
 		shapeList.add (new Circle(5));
 		shapeList.add (new Circle(3.5));
@@ -37,6 +31,17 @@ public class ShapeTest extends Shape
 		shapeList.add (new Hexagon(5.5));
 		shapeList.add (new Hexagon(4));
 		shapeList.remove (7);
+		
+		for(int i = 1; i <= shapeList.size(); i++){
+			try{
+				FileOutputStream fs = new FileOutputStream("obj"+i+".ser");  
+				ObjectOutputStream os = new ObjectOutputStream(fs);  
+				os.writeObject(shapeList.indexOf(i)); 
+				fs.close();
+				os.close();
+			}catch(IOException e){
+				System.out.println(e);
+			}
 		
 		int i = 1;
 		for(Shape s : shapeList)
