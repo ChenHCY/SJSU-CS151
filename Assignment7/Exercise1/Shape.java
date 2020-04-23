@@ -8,9 +8,15 @@ package Exercise1;
 
 import java.util.ArrayList;
 
-public abstract class Shape 
+public abstract class Shapes 
 {
-	static ArrayList<Shape> shapeList = new ArrayList<Shape>();
+	private ArrayList<Shape> shapeList;
+	
+	// constructor
+	Shapes()
+	{
+		shapeList = new ArrayList<Shape>();
+	}
 
 	//the shapeList setter
 	public void setStringList(ArrayList<Shape> shapeList)
@@ -41,7 +47,9 @@ public abstract class Shape
     
     public void compute()
     {
-    	System.out.println(toString());
-
+    	//System.out.println(toString());
+	for(...){
+		s.computeArea();
+	}
     }
 }
