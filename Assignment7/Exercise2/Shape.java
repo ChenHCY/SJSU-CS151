@@ -23,7 +23,7 @@ public abstract class Shape
 	    return shapeList;
 	}
 
-	public void maxArea(ArrayList<Shape> shapeList)
+	public void max()
 	{
 		Shape largest = null;
 		for(Shape shape: shapeList) 
@@ -36,7 +36,7 @@ public abstract class Shape
 		 System.out.println("#### The details of the shape with largest area are :" + largest);		
 	}
 	
-	public void minArea(ArrayList<Shape> shapeList)
+	public void min()
 	{
 		Shape smallest = null;
 		for(Shape shape: shapeList) 
