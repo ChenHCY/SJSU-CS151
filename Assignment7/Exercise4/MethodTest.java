@@ -13,4 +13,7 @@ public class MethodTest
 
 	}
 
+	public < T > int count(ArrayList< T > myList){
+		return(myList.size());
+	}
 }
