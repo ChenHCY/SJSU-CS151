@@ -38,15 +38,16 @@ public class ShapeTest extends Shape
     	}
 	}*/
 	
-	new Thread() {
-   	public void run() {
-	      shapes.compute();
-	   }
-	}.start()
-	
-	new Thread() {
-   	public void run() {
-	      shapes.compute();
-	   }
-	}.start()
+		new Thread() {
+		public void run() {
+		      shapes.compute();
+		   }
+		}.start()
+
+		new Thread() {
+		public void run() {
+		      shapes.compute();
+		   }
+		}.start()
+	}
 }
