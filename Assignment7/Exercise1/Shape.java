@@ -22,6 +22,16 @@ public abstract class Shape
 	{
 	    return shapeList;
 	}
+	
+	//the add and the remove
+	public void add(Shape a)
+    	{
+    	    shapeList.add(a);
+    	}
+    	public void remove(Shape r)
+    	{
+    	   shapeList.remove(r);
+    	}
 
     @Override
     public String toString ()
