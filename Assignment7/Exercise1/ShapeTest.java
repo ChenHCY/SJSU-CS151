@@ -10,31 +10,43 @@ public class ShapeTest extends Shape
 {
 	public static void main(String[] args) 
 	{
-		Shape shape = new Shape();
+		Shapes shapes = new Shapes();
 		//1. Triangle
-		shape.add(new Triangle(4.5,4));
-		shape.add(new Triangle(3,5.5));
+		shapes.add(new Triangle(4.5,4));
+		shapes.add(new Triangle(3,5.5));
 		
 		//2. Circle
-		shape.add (new Circle(5));
-		shape.add (new Circle(3.5));
+		shapes.add (new Circle(5));
+		shapes.add (new Circle(3.5));
 		
 		//3. Rectangle
-		shape.add (new Rectangle(5, 7));
-		shape.add (new Rectangle(3.5, 8.5));
+		shapes.add (new Rectangle(5, 7));
+		shapes.add (new Rectangle(3.5, 8.5));
 		
 		//4. Hexagon
-		shape.add (new Hexagon(8));
-		shape.add (new Hexagon(5.5));
-		shape.add (new Hexagon(4));
-		shape.remove (7);
+		shapes.add (new Hexagon(8));
+		shapes.add (new Hexagon(5.5));
+		shapes.add (new Hexagon(4));
+		shapes.remove (7);
 		
-		int i = 1;
+	/*	int i = 1;
 		for(Shape s : shapeList)
     	{
     		System.out.print(i + ". "); 
     		i++;
     		s.compute();
     	}
-	}
+	}*/
+	
+	new Thread() {
+   	public void run() {
+	      shapes.compute();
+	   }
+	}.start()
+	
+	new Thread() {
+   	public void run() {
+	      shapes.compute();
+	   }
+	}.start()
 }
