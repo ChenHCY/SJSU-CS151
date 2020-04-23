@@ -42,6 +42,7 @@ public class ShapeTest extends Shape
 			}catch(IOException e){
 				System.out.println(e);
 			}
+		}
 		
 		int i = 1;
 		for(Shape s : shapeList)
