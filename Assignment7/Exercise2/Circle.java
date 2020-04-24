@@ -6,7 +6,7 @@
 
 package Exercise2;
 
-public class Circle extends Shape
+public class Circle implements Shape
 {
 	private double radius;
 	
@@ -18,9 +18,9 @@ public class Circle extends Shape
 	//the getter and setter
 	public double getRadius() {return radius;}
 	public void setRadius(double radius) { this.radius = radius;}
-	
-	 @Override
-	public double computeArea() 
+	 
+	@Override
+	public Double computeArea() 
 	{
 		return Math.PI * Math.pow(radius, 2);
 	}
@@ -28,8 +28,6 @@ public class Circle extends Shape
 	@Override
 	public String toString()
 	{
-		return String.format(super.toString() + "Cricle " + "The Radius: " + radius + "\n" 
-				                + "[The Shape Area]: "  + computeArea() + "\n");
+		return String.format("[Cricle] with The radiu was " + radius + "\n");
 	}
-
 }
