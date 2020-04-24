@@ -6,32 +6,7 @@
 
 package Exercise3;
 
-import java.util.ArrayList;
-
-public abstract class Shape 
+public interface Shape 
 {
-	static ArrayList<Shape> shapeList = new ArrayList<Shape>();
-
-	//the shapeList setter
-	public void setStringList(ArrayList<Shape> shapeList)
-	{
-	    this.shapeList = shapeList;
-	}
-	//the shapeList getter
-	public ArrayList<Shape> getShapeList() 
-	{
-	    return shapeList;
-	}
-
-    @Override
-    public String toString ()
-    {
-    	return String.format("[Shape Name]: ");	
-    }
-    
-    public void compute()
-    {
-    	System.out.println(toString());
-
-    }
+	Double computeArea();
 }
