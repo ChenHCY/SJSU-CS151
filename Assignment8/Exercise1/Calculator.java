@@ -32,9 +32,9 @@ public class Calculator extends Application
 	ComboBox <String> FileMenu = new ComboBox<String>();
 	
 	//the image for the calculator buttons
-	Image btnImg = new Image("Calculator.png");
+	Image btnImg = new Image(getClass().getResourceAsStream("Calculator.png"));
 	ImageView imageView = new ImageView(btnImg);
-	Button btCalculate = new Button("Calculate", imageView); // the calculator buttons.
+	Button btCalculate = new Button("Calculate"); // the calculator buttons.
 	
 	@Override 
 	public void start(Stage primaryStage) throws Exception 
@@ -48,6 +48,10 @@ public class Calculator extends Application
 		FileMenu.getItems().add("*");
 		FileMenu.getItems().add("/");
 		FileMenu.setEditable(true);
+		
+		imageView.setFitWidth(50);
+		imageView.setFitHeight(50);
+		btCalculate.setGraphic(imageView);
 		
 		pane.add(new Label("The First Number:"), 0, 0);
 		pane.add(tfNum1, 1, 0);
