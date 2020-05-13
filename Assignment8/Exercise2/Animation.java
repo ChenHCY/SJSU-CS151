@@ -17,6 +17,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -37,13 +38,21 @@ public class Animation extends Application
 	Box b = new Box(100, 100, 75);
 	Polygon h = new Polygon();
 	
+	ComboBox <String> FileMenu = new ComboBox<String>();
+	
+	// the rotate transition
 	RotateTransition rt1 = new RotateTransition(Duration.millis(3000),s); 
 	RotateTransition rt2 = new RotateTransition(Duration.millis(3000),c); 
 	RotateTransition rt3 = new RotateTransition(Duration.millis(3000),b); 
 	RotateTransition rt4 = new RotateTransition(Duration.millis(3000),h); 
 	
-	ScaleTransition t = new ScaleTransition(Duration.millis(2000),s);  
+	//the Scale Transition
+	ScaleTransition t1 = new ScaleTransition(Duration.millis(3000),s);
+	ScaleTransition t2 = new ScaleTransition(Duration.millis(3000),c);
+	ScaleTransition t3 = new ScaleTransition(Duration.millis(3000),b);
+	ScaleTransition t4 = new ScaleTransition(Duration.millis(3000),h);
 	
+	//the Fade Transition
 	FadeTransition ft = new FadeTransition(Duration.millis(3000), h);
 	
 	@Override
@@ -69,7 +78,7 @@ public class Animation extends Application
         b.setTranslateX(150);
         b.setTranslateY(450); 
         PhongMaterial phmaterial3 = new PhongMaterial();
-        phmaterial3.setDiffuseColor(Color.ORANGE);
+        phmaterial3.setDiffuseColor(Color.GREEN);
         b.setMaterial(phmaterial3);
         
        //create a Polygon
@@ -99,70 +108,146 @@ public class Animation extends Application
 		
 		Button btSequential = new Button("Sequential");
 		btSequential.setOnAction(e -> Sequential(e));
+		
+		FileMenu.getItems().add("Sphere");
+		FileMenu.getItems().add("Cylinder");
+		FileMenu.getItems().add("Box");
+		FileMenu.getItems().add("Polygon");
+		FileMenu.setEditable(true);
+		
+		HBox hbox = new HBox(FileMenu);
 				
 		HBox buttons = new HBox(5);
-		buttons.getChildren().addAll(btRotate, btScale, btSequential, btFade);
+		buttons.getChildren().addAll(hbox, btRotate, btScale, btFade, btSequential);
 		buttons.setAlignment(Pos.CENTER);
 		buttons.setPadding(new Insets(10, 10, 10, 10));
 
 		BorderPane Pane = new BorderPane(pane, null, null, buttons, null);
 		primaryStage.setScene(new Scene(Pane, 600, 680));
 	    primaryStage.setTitle("CS151 HW8 Exercise-2 ");
-	    primaryStage.show();
-		
+	    primaryStage.show();	
 	}
+	
+	
 
 	//the Rotate Transition Part
 	private void rotate(ActionEvent e) 
 	{
-		rt1.setByAngle(360); 
-	    rt1.setCycleCount(50); 
-	    rt1.setAutoReverse(false); 
-		rt1.play();
-		
-		rt2.setByAngle(360); 
-	    rt2.setCycleCount(50); 
-	    rt2.setAutoReverse(false); 
-		rt2.play();
-		
-		rt3.setByAngle(360); 
-	    rt3.setCycleCount(50); 
-	    rt3.setAutoReverse(false); 
-		rt3.play();
-		
-		rt4.setByAngle(360); 
-	    rt4.setCycleCount(50); 
-	    rt4.setAutoReverse(false); 
-		rt4.play();
+		String usertype = FileMenu.getValue().toString();
+		if (usertype == "Sphere") {
+			rt1.setByAngle(360); 
+		    rt1.setCycleCount(50); 
+		    rt1.setAutoReverse(false); 
+			rt1.play();	
+		} else if (usertype == "Cylinder") {
+			rt2.setByAngle(360); 
+		    rt2.setCycleCount(50); 
+		    rt2.setAutoReverse(true); 
+			rt2.play();
+		} else if (usertype == "Box") {
+			rt3.setByAngle(360); 
+		    rt3.setCycleCount(50); 
+		    rt3.setAutoReverse(false); 
+			rt3.play();
+		} else {
+			rt4.setByAngle(360); 
+		    rt4.setCycleCount(50); 
+		    rt4.setAutoReverse(false); 
+			rt4.play();
+		}
 	}
 	
 	// the Scale Transition Part
 	private void scale(ActionEvent e) 
 	{
-		//ScaleTransition t = new ScaleTransition(Duration.millis(2000),s);  
-		t.setByX(1);
-		t.setByY(1);
-		t.setCycleCount(50); 
-		t.setAutoReverse(false);  
-		t.play();  
+		String usertype = FileMenu.getValue().toString();
+		if (usertype == "Sphere") {
+			t1.setByX(1);
+			t1.setByY(1);
+			t1.setCycleCount(50); 
+			t1.setAutoReverse(false);  
+			t1.play(); 	
+		} else if (usertype == "Cylinder") {
+			t2.setByX(1);
+			t2.setByY(1);
+			t2.setCycleCount(50); 
+			t2.setAutoReverse(false);  
+			t2.play(); 	
+		} else if (usertype == "Box") {
+			t3.setByX(1);
+			t3.setByY(1);
+			t3.setCycleCount(50); 
+			t3.setAutoReverse(false);  
+			t3.play(); 	
+		} else {
+			t4.setByX(1);
+			t4.setByY(1);
+			t4.setCycleCount(50); 
+			t4.setAutoReverse(false);  
+			t4.play(); 	
+		} 
 	}
 	
 	// the Fade Transition Part
 	private void Fade(ActionEvent e) 
 	{
-		//FadeTransition ft = new FadeTransition(Duration.millis(3000), h);
-		ft.setFromValue(1.0);
-		ft.setToValue(0.1);
-		ft.setCycleCount(Timeline.INDEFINITE);
-		ft.setAutoReverse(true);
-		ft.play();
+		String usertype = FileMenu.getValue().toString();
+		if (usertype == "Polygon") 
+		{
+			ft.setFromValue(1.0);
+			ft.setToValue(0.1);
+			ft.setCycleCount(Timeline.INDEFINITE);
+			ft.setAutoReverse(true);
+			ft.play();
+		}
 	}
 	
 	// the Sequential Transition Part
 	private void Sequential(ActionEvent e)
-	{
-		SequentialTransition S = new SequentialTransition(rt4, t, ft); 
-		S.play();
+	{	
+		String usertype = FileMenu.getValue().toString();
+		if (usertype == "Sphere") {
+			rt1.setByAngle(360); 
+		    	rt1.setCycleCount(50); 
+		    	t1.setByX(1);
+			t1.setByY(1);
+			t1.setCycleCount(50); 
+			SequentialTransition S1 = new SequentialTransition(s, rt1, t1);
+			S1.getCurrentTime();
+			S1.setAutoReverse(true);
+			S1.play();
+		} else if (usertype == "Cylinder") {
+			rt2.setByAngle(360); 
+		    rt2.setCycleCount(50); 
+		    t2.setByX(1);
+			t2.setByY(1);
+			t2.setCycleCount(50); 
+			SequentialTransition S2 = new SequentialTransition(c, rt2, t2); 
+			S2.setCycleCount(2);
+			S2.setAutoReverse(true);
+			S2.playFromStart();
+		} else if (usertype == "Box") {
+			rt3.setByAngle(360); 
+		    	rt3.setCycleCount(50); 
+		    	t3.setByX(1);
+			t3.setByY(1);
+			t3.setCycleCount(50); 
+			SequentialTransition S3 = new SequentialTransition(b, rt3, t3); 
+			S3.setAutoReverse(true);
+			S3.play();	
+		} else {
+			rt4.setByAngle(360); 
+		    	rt4.setCycleCount(50); 
+		    	t4.setByX(1);
+			t4.setByY(1);
+			t4.setCycleCount(50); 
+			ft.setFromValue(1.0);
+			ft.setToValue(0.1);
+			ft.setCycleCount(Timeline.INDEFINITE);
+			SequentialTransition S4 = new SequentialTransition(h, rt4, t4, ft); 
+			S4.setAutoReverse(true);
+			S4.play();
+		} 
 	}
 	
 	
