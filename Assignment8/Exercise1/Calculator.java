@@ -103,11 +103,11 @@ public class Calculator extends Application
 		
 	private void calculatorValue(Event e)
 	{
-		int num1, num2, answer;
+		double num1, num2, answer;
 		char symbol;
 		
-		num1 = Integer.parseInt(tfNum1.getText());
-		num2 = Integer.parseInt(tfNum2.getText());
+		num1 = Double.parseDouble(tfNum1.getText());
+		num2 = Double.parseDouble(tfNum2.getText());
 		String usertype = FileMenu.getValue().toString();
 		
 		if (usertype == "+") 
