@@ -29,7 +29,7 @@ public class Calculator extends Application
 	private TextField tfNum2 = new TextField(); // the textField for second number 
 	private Button btnClear = new Button("Clear"); // the clear buttons
 	private Label FinalAnswer = new Label(); // the text for final answer
-	ComboBox <String> FileMenu = new ComboBox<String>();
+	ComboBox <String> FileMenu = new ComboBox<String>(); // the menu of operative symbol
 	
 	//the image for the calculator buttons
 	Image btnImg = new Image(getClass().getResourceAsStream("Calculator.png"));
